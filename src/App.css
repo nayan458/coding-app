@@ -1,38 +1,71 @@
-.App {
-  text-align: center;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@layer components {
+  .global-indent{
+    @apply pl-5 pr-4 sm:pl-10 md:pl-[3rem] lg:pl-24;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .global-li{
+    @apply my-2 ;
   }
-  to {
-    transform: rotate(360deg);
+  .h1-head{
+    @apply text-[3rem] sm:text-[5rem] md:text-[6rem] ;
+    @apply text-neo-200 lg:text-[5rem] font-Ultra;
+  }
+  .h2-head{
+    @apply text-[2rem] sm:text-[2.5rem] md:text-[3rem] ;
+    @apply text-neo-200 lg:text-[3.3rem] font-special-elite font-bold;
+  }
+  .h3-head{
+    @apply text-[1.6rem] sm:text-[1.8rem] md:text-[2rem];
+    @apply text-ff lg:text-[2.5rem] font-Inter;
+  }
+  .link-head{
+    @apply text-neo-300 font-sans text-[1.7rem] font-medium cursor-pointer;
+  }
+  .btn{
+    @apply px-5 sm:px-6 md:px-8 lg:mt-10;
+    @apply lg:px-12 lg:py-1 text-center
+      rounded-sm
+        text-orange-600 font-special-elite outline-none 
+        border-2 border-ff cursor-pointer 
+        hover:bg-orange-600 hover:text-charcol hover:border-orange-600
+        transform ease-in duration-150;
+  }
+  .hide-y{
+    @apply -translate-y-full
+  }
+  .top-nav{
+    @apply w-full h-auto px-24 py-2 bg-charcol/20 opacity-100 fixed top-0 flex justify-between align-middle items-center z-30 duration-150 backdrop-blur-sm;
+  }
+
+
+  /* Forms */
+  .tagline-sm{
+    @apply text-[.8rem] sm:text-[.8rem] md:text-[.8rem] lg:text-[1rem] ;
+    @apply text-charcol/60 font-SansPro font-bold  ;
+  }
+
+  .form-head1{
+    @apply text-[2rem] sm:text-[2.5rem] md:text-[2.6rem] ;
+    @apply text-neo-300 lg:text-[3rem] font-SansPro font-bold;
+  }
+
+  .form-head2{
+    @apply text-[1.6rem] sm:text-[1.8rem] md:text-[2rem] lg:text-[2.5rem] ;
+    @apply text-charcol font-SansPro font-bold;
+  }
+
+  .form-inputs{
+    /* @apply text-[1.6rem] sm:text-[1.8rem] md:text-[2rem]; */
+    /* @apply text-ff lg:text-[2.5rem] font-Inter; */
+    @apply text-base;
+    @apply md:text-xl font-light font-sans px-3 py-2 rounded-md outline-none border-slate-400 ;
+  }
+  .form-btn{
+    @apply text-base;
+    @apply bg-green-400 rounded-md md:text-xl font-SansPro font-bold px-2 py-3 shadow-lg text-slate-700 outline-none border-none ;  
+    @apply active:bg-green-300 active:text-slate-600;
   }
 }
