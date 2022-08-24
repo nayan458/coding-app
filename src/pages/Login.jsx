@@ -1,7 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import cb from '../media/img/codeeBoy.png'
 
 export default function Login() {
+
+  const [formvalue, setformvalue] = useState({
+    email:'',
+    password:''
+  })
+
+  let name, value;
+
+  let handelChange=(e)=>{
+    name = e.target.name;
+    value = e.target.value
+    setformvalue({...formvalue,[name]:value})
+  }
+
+  const sub=(e)=>{
+    e.preventDefault()
+  }
+
   return (
     <>
     <div className='w-screen min-h-screen flex justify-center align-middle items-center bg-slate-100 px-6 py-1'>
@@ -26,22 +45,26 @@ export default function Login() {
               Fill in your details below.
             </span>
             </p>
-            <from className="grid gap-4 md:gap-7">
-                <input type="email" placeholder='Email' className='form-inputs' autoComplete='false'/>
-                <input type="password" placeholder='Password' className='form-inputs' autoComplete='false'/>
+            <form className="grid gap-4 md:gap-7" onSubmit={sub}>
+                <input type="email" placeholder='Email' className='form-inputs' autoComplete='false' name='email' value={formvalue.email} onChange={handelChange}/>
+                <input type="password" placeholder='Password' className='form-inputs' autoComplete='false' name='password' value={formvalue.password} onChange={handelChange}/>
                 <div className='text-xs md:text-sm text-center'>Don't remember password?
-                <a href='#' className='px-2 font-bold text-blue-600 hover:underline hover:underline-offset-2 '>
+                <a href='#' className='px-2 font-bold text-blue-600 hover:underline hover:underline-offset-2'>
                  Forgot Password
                 </a>
                  </div>
-                <button type="submit" className='form-btn'>Submit</button>
-            </from>
+                <button type="submit" className='form-btn'>
+                <Link to='/'>
+                    Submit
+                </Link>
+                </button>
+            </form>
 
 
                 <div className='text-xs md:text-sm text-center'>Don't have an account?
-                <a href='#' className='px-2 font-bold text-green-600 hover:underline hover:underline-offset-2 '>
+                <Link to='/register' className='px-2 font-bold text-green-600 hover:underline hover:underline-offset-2 '>
                  Register Here
-                </a>
+                </Link>
                  </div>
                  
           </div>

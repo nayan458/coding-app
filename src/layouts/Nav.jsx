@@ -1,42 +1,47 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Nav(props) {
 
-// const [tooltip, setTooltip] = useState(true)
-//     const open =()=> setTooltip(true)
-//     const close =()=> setTooltip(false)
+// // const [tooltip, setTooltip] = useState(true)
+// //     const open =()=> setTooltip(true)
+// //     const close =()=> setTooltip(false)
 
-    const [navDisplay, setNavDisplay] = useState(true)
-    const close =()=> setNavDisplay(false)
-    const open =()=> setNavDisplay(true)
+//     const [navDisplay, setNavDisplay] = useState(true)
+//     const close =()=> setNavDisplay(false)
+//     const open =()=> setNavDisplay(true)
 
-    var lastScrollTop = 0;
+//     var lastScrollTop = 0;
 
-    let navbar = document.getElementById('nav');
-    window.addEventListener("scroll",()=>{
-        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if(scrollTop > lastScrollTop){
-            navbar.classList.add("-translate-y-full")
-            // close()
-            console.clear()
-        }
-        else{
-            navbar.classList.remove("-translate-y-full")
-            // open()
-            console.clear()
-        }
-        lastScrollTop = scrollTop;
-    })
+//     let navbar = document.getElementById('nav');
+//     window.addEventListener("scroll",()=>{
+//         var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//         if(scrollTop > lastScrollTop){
+//             navbar.classList.add("-translate-y-full")
+//             // close()
+//             console.clear()
+//         }
+//         else{
+//             navbar.classList.remove("-translate-y-full")
+//             // open()
+//             console.clear()
+//         }
+//         lastScrollTop = scrollTop;
+//     })
 
   return (
     <>
         <nav id="nav" className='top-nav'>
             <div className='flex gap-14 link-head'>
-                {/* <link> */}
-                    Event
-                {/* </link> */}
+                <Link to="/login">
+                    Login
+                </Link>
                 
-                <div>Contect Us</div>
+                <div>
+                <Link to="/register">
+                    register
+                </Link>
+                </div>
             </div>
             <div className='flex items-center h-full cursor-pointer'>
                 <div>

@@ -1,4 +1,6 @@
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import './App.css';
+import Error from './pages/Error';
 // import BouncingBall from './layouts/BouncingBall';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -8,11 +10,15 @@ import User from './pages/User';
 function App() {
   return (
     <>
-      {/* <BouncingBall/> */}
-      {/* <Home/> */}
-      <User/>
-      {/* <Login/> */}
-      {/* <Registration/> */}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/register" element={<Registration/>} />
+        <Route path="*" element={<Error/>} />
+
+      </Routes>
+    </BrowserRouter>
     </>
   );
 }

@@ -15,7 +15,7 @@ export default function Home() {
         <BouncingBall/>
         <Nav/>
         <section>
-            <div className='min-h-screen w-screen global-indent flex-col justify-evenly align-middle lg:flex' id="main">
+            <div className='min-h-screen w-screen global-indent flex-col justify-evenly align-middle lg:flex bg-blk' id="main">
             <NavDmy/>
                 <div className='h1-head bg-clip-text '>
                 Coding <br/>
@@ -25,7 +25,9 @@ export default function Home() {
                     Hello World...
                 </div>
                 <div className=' sm:flex-none lg:absolute right-0 top-10 w-screen h-[24rem] md:w-screen md:h-[30rem] lg:w-[40rem] lg:h-[40rem] bg-transparent overflow-hidden flex align-middle justify-center items-center'>
-                    <AnimCodeHouse className={'relative right-0 top-10 w-[40rem] h-[40rem] md:w-[50rem] md:h-[50rem] lg:w-[60rem] lg:h-[60rem]'}/>
+                    <AnimCodeHouse 
+                    className={'relative right-0 top-10 w-[40rem] h-[40rem] md:w-[50rem] md:h-[50rem] lg:w-[60rem] lg:h-[60rem]'}
+                    />
                 </div>
                 <div className='my-10'><Button/></div>
             </div>
