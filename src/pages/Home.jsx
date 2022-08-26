@@ -1,6 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import Buletin from '../components/Buletin';
 import Button from '../components/Button'
+import WhatsAppBtn from '../components/WhatsAppBtn';
 import BouncingBall from '../layouts/BouncingBall';
 import Nav from '../layouts/Nav'
 import NavDmy from '../layouts/NavDmy';
@@ -12,6 +14,7 @@ export default function Home() {
   return (
 
     <>
+        {/* <WhatsAppBtn/> */}
         <BouncingBall/>
         <Nav/>
         <section>
@@ -21,7 +24,7 @@ export default function Home() {
                 Coding <br/>
                 Compitition
                 </div>
-                <div className='h2-head text-ff my-4'>
+                <div className='h2-head text-transparent bg-gradient-to-r from-pink-800 to-blue-200  bg-clip-text my-4 font-sketch font-extralight'>
                     Hello World...
                 </div>
                 <div className=' sm:flex-none lg:absolute right-0 top-10 w-screen h-[24rem] md:w-screen md:h-[30rem] lg:w-[40rem] lg:h-[40rem] bg-transparent overflow-hidden flex align-middle justify-center items-center'>
@@ -29,7 +32,11 @@ export default function Home() {
                     className={'relative right-0 top-10 w-[40rem] h-[40rem] md:w-[50rem] md:h-[50rem] lg:w-[60rem] lg:h-[60rem]'}
                     />
                 </div>
-                <div className='my-10'><Button/></div>
+                <div className='my-10'>
+                <Link to='/register'>
+                    <Button herf='/register'/>
+                </Link>
+                </div>
             </div>
         </section>
 
@@ -83,8 +90,10 @@ export default function Home() {
                     </ul>
                 </div>
                 <div>
+                <Link to={Agenda} target='blank' download="coding_compitition_2022_agenda">
                     <Button name="View Agenda" herf={Agenda} target='blank' download="coding_compitition_2022_agenda">
                     </Button>
+                </Link>
                 </div>
             </div>
         </section>

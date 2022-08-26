@@ -10,7 +10,8 @@ module.exports = {
         'Inter' : 'Inter',
         'Ultra' : 'Ultra',
         'special-elite' : 'Special Elite',
-        'SansPro' : ['Source Sans Pro', 'sans-serif']
+        'SansPro' : ['Source Sans Pro', 'sans-serif'],
+        'sketch' : 'Rubik Marker Hatch'
       },
       colors: {
         '00': '#FFFFFF',

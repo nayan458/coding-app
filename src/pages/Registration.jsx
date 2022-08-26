@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import cb from '../media/img/registration.png'
 
 export default function Registration() {
 
     const [x, setx] = useState(null)
-    const setm =()=> setx(true)
+    const setm =()=> {setx(true)}
     const setf =()=> setx(false)
 
 
@@ -16,13 +16,18 @@ export default function Registration() {
   const handelChange=(e)=>{
     name = e.target.name;
     value = e.target.value;
-    console.log(name)
-    console.log(value)
+    // console.log(name)
+    // console.log(value)
+    if(name === 'gender'){
+      if(value === 'male'){setm()}
+      if(value === 'female'){setf()}
+    }
+    // alert(`${typeof name}\n${value}`)
+    // console.log(e)
 
     setusrDetails({...usrDetails,[name] : value})
   }
 
-  
   const [succmsg, setsuccmsg] = useState(false)
   const open=()=>{setsuccmsg(true)}
   const close=()=>{setsuccmsg(false)}
@@ -33,18 +38,23 @@ export default function Registration() {
   
   const showDetails=()=>{
     // [name,phone,email,password,institute,team,gender] = usrDetails
+    
     if(!usrDetails.fname 
       || !usrDetails.phone 
       || !usrDetails.email 
       || !usrDetails.password 
       || !usrDetails.institute 
-      || !usrDetails.team){
+      || !usrDetails.team
+      || !usrDetails.gender
+      ){
       window.alert('You need to fill values in all the fields')
+      close()
       openErr()
       return
     }
 
-    window.alert(`Successfully registered with usr details \n ${usrDetails.fname}\n ${usrDetails.phone}\n  ${usrDetails.email}\n ${usrDetails.password}\n ${usrDetails.institute}\n ${usrDetails.team}\n ${usrDetails.gender}\n`);
+    window.alert(`Successfully registered with usr details \n ${usrDetails.fname}\n ${usrDetails.phone}\n  ${usrDetails.email}\n ${usrDetails.password}\n ${usrDetails.institute}\n ${usrDetails.team}\n ${usrDetails.gender}`);
+    // console.log(usrDetails.gender)
     closeErr()
     open()
   }
@@ -96,24 +106,40 @@ export default function Registration() {
                 <input type="text" placeholder='Full Name' className='form-inputs' name='fname' value={usrDetails.fname } onChange={handelChange} />
                 <input type="number" placeholder='Phone' className='form-inputs' name='phone' value={usrDetails.phone } onChange={handelChange} />
                 <input type="email" placeholder='Email' className='form-inputs' name='email' value={usrDetails.email } onChange={handelChange} />
-                <input type="password" placeholder='Password' className='form-inputs' name='password' value={usrDetails.password } onChange={handelChange} />
+                <input type="password" placeholder='Password' className='form-inputs w-full' name='password' value={usrDetails.password } onChange={handelChange} />
                 <input type="text" placeholder='Institute' className='form-inputs' name='institute' value={usrDetails.institute } onChange={handelChange} />
                 <input type="text" placeholder='Team' className='form-inputs' name='team' value={usrDetails.team } onChange={handelChange} />
-                <label>Gender</label>
+                <label className='text-slate-500 font-medium'>Gender</label>
+
+
                 <div className='flex gap-11'>
-                  <button type='button' className={x ? 'px-3 py-2 bg-blue-300 rounded-sm text-slate-50 outline-none border-none transform duration-100 ease-linear' : 'px-3 py-2 bg-blue-500 rounded-sm text-slate-50 outline-none border-none transform duration-100 ease-linear'} value="male" name='gender' 
-                  onChange={handelChange}
-                  onClick= {setm}
+                  <button type='radio' 
+                          className={x ? 'm-btn' : 'm-btn-active'} 
+                          name='gender' 
+                          value="male" 
+                          onClick={handelChange}
+                          // onMouseLeave={x ? handelChange : null}
+                          // onClick= {setm}
                   >
-                    <i className="fa-solid fa-mars"></i>
+                  male
+                    {/* <i className="fa-solid fa-mars"></i> */}
                   </button>
-                  <button type='button' className={!x && x != null ? 'px-3 py-2 bg-pink-300 rounded-sm text-slate-50 outline-none border-none transform duration-100 ease-linear' : 'px-3 py-2 bg-pink-500 rounded-sm text-slate-50 outline-none border-none transform duration-100 ease-linear'} value="female" name='gender' 
-                  onChange={handelChange}
-                  onClick={setf}
+
+
+                  <button type='radio' 
+                          className={!x && x != null ? 'f-btn' : 'f-btn-active'} 
+                          name='gender' 
+                          value="female" 
+                          onClick={handelChange}
+                          // onMouseEnter={!x && x != null ? handelChange : null}
+                          // onClick= {setf}
                   >
-                  <i className="fa-solid fa-venus"></i>
+                  female
+                  {/* <i className="fa-solid fa-venus"></i> */}
                   </button>
                 </div>
+
+
                 <div className='text-xs md:text-sm '>Already have an account?
                 <Link to='/login' className='px-2 font-bold text-green-600 hover:underline hover:underline-offset-2 '>
                  Login  

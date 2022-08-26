@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import maleAvatar from '../media/img/avatars/male1.png'
+import femaleAvatar from '../media/img/avatars/female1.png'
 
 export default function Nav(props) {
+
+    const [gender, setGender] = useState('female')
 
 // // const [tooltip, setTooltip] = useState(true)
 // //     const open =()=> setTooltip(true)
@@ -33,27 +37,29 @@ export default function Nav(props) {
     <>
         <nav id="nav" className='top-nav'>
             <div className='flex gap-14 link-head'>
+                <Link to="/">
+                    Home
+                </Link>
                 <Link to="/login">
                     Login
                 </Link>
-                
-                <div>
                 <Link to="/register">
                     register
                 </Link>
-                </div>
             </div>
             <div className='flex items-center h-full cursor-pointer'>
-                <div>
+                <Link to='/usr'>
                     {/* the image part if present or not */}
-                        {props.img ? 
-                        <img src={props.img} alt="img"></img>
-                        :    
+                        {gender === 'male' ? 
+                        <img src={maleAvatar} alt="img" className='w-10 h-10'></img>
+                        : gender === 'female'
+                        ?
+                        <img src={femaleAvatar} alt="img" className='w-10 h-10'></img>
+                        :
                         <div className='w-10 h-10 bg-neo-300 rounded-full'>
-
                         </div>
                         }
-                </div>
+                </Link>
 
                 
             </div>

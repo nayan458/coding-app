@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Button(props) {
   return (
@@ -6,13 +7,13 @@ export default function Button(props) {
         <button type={props.type ? props.type : 'button'} className='h3-head btn'>
 
         {props.download ? 
-            <a target={props.target} href={props.herf ? props.herf : '#'} download={props.download ? props.download : "blank"} >
+            <Link target={props.target} to={props.herf ? props.herf : '#'} download={props.download ? props.download : "blank"} >
               {props.name ? props.name : 'Register Here'}
-            </a>
+            </Link>
           :
-            <a target={props.target} href={props.herf ? props.herf : '#'} >
+            <Link target={props.target} to={props.herf ? props.herf : '#'} >
               {props.name ? props.name : 'Register Here'}
-            </a>
+            </Link>
         }
         </button>
         {/* <button class="bg-cyan-500 shadow-lg shadow-cyan-5">Subscribe</button>

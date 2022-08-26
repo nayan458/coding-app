@@ -68,4 +68,25 @@
     @apply bg-green-400 rounded-md md:text-xl font-SansPro font-bold px-2 py-3 shadow-lg text-slate-700 outline-none border-none ;  
     @apply active:bg-green-300 active:text-slate-600;
   }
+
+  /*//////////////////////////////////////// ****************************************************************************************8////////////////////////// */
+  /* Registration buton styles */
+
+  .f-btn {
+    @apply px-3 py-2 bg-pink-300 rounded-sm text-slate-50 outline-none border-none transform duration-100 ease-linear;
+  }
+  .f-btn-active{
+    @apply active:bg-pink-300;
+    @apply px-3 py-2 bg-pink-500 rounded-sm text-slate-50 outline-none border-none transform duration-100 ease-linear;
+  }
+
+  .m-btn{
+    @apply px-3 py-2 bg-blue-300 rounded-sm text-slate-50 outline-none border-none transform duration-100 ease-linear ;
+  }
+  .m-btn-active{
+    @apply active:bg-blue-300;
+    @apply px-3 py-2 bg-blue-500 rounded-sm text-slate-50 outline-none border-none transform duration-100 ease-linear;
+  }
+
+  /*//////////////////////////////////////// ****************************************************************************************8////////////////////////// */
 }
