@@ -56,14 +56,14 @@ const close=()=>{setDisplay(false)}
   return (
     <>      
             <div className={display ? 'fixed w-screen h-screen bg-transparent/20 z-40 backdrop-blur-sm transform duration-150' : 'fixed w-screen h-screen bg-transparent/20 z-40 backdrop-blur-sm transform -translate-x-full duration-150'} onClick={close}></div>
-            <div className={display ? 'fixed h-screen w-[40%] px-8 py-2 flex flex-col gap-5 bg-slate-900 z-50 transform translate-x-0 duration-150' : 'fixed h-screen w-[40%] px-8 py-2 flex flex-col gap-5 bg-slate-900 z-50 transform -translate-x-full duration-150'}>
+            <div className={display ? 'fixed h-screen w-[60%] sm:w-[40%] px-8 py-2 flex flex-col gap-5 bg-slate-900 z-50 transform translate-x-0 duration-150' : 'fixed h-screen w-[40%] px-8 py-2 flex flex-col gap-5 bg-slate-900 z-50 transform -translate-x-full duration-150'}>
             <Link to='/' className='cursor-pointer'>
                 <Logo/>
             </Link>
-                    <Link to='/register' className='bg-gradient-to-r from-pink-500 via-pink-400 to-rose-300/80 px-3 py-2 text-slate-50 rounded-sm cursor-pointer font-semibold'>
+                    <Link to='/register' className='bg-gradient-to-r from-pink-500 via-pink-400 to-rose-300/80 px-3 py-2 text-slate-50 rounded-sm cursor-pointer font-semibold text-center'>
                     Create Account
                 </Link>
-                <Link to='/login' className='px-3 py-2 text-green-400 rounded-sm cursor-pointer font-semibold '>
+                <Link to='/login' className='px-3 py-2 text-green-400 rounded-sm cursor-pointer font-semibold text-center'>
                     Sign in
                 </Link> 
             </div>

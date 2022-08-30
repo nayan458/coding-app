@@ -24,13 +24,13 @@ export default function Login() {
 
   return (
     <>
-    <div className='top-0 px-16 py-2 absolute bg-slate-100'>
+    {/*  */}
+    <div className='w-screen min-h-screen md:flex justify-center align-middle items-center bg-slate-100 px-6 py-1'>
+    <div className='top-0 pl-5 pt-2 pr-4 sm:px-10 md:px-[3rem] lg:px-24 left-0 bg-slate-100 md:absolute'>
       <Link to='/'>
         <LogoBlack/>
       </Link>
     </div>
-    {/*  */}
-    <div className='w-screen min-h-screen flex justify-center align-middle items-center bg-slate-100 px-6 py-1'>
       <div className='w-full h-full grid grid-cols-8 gap-12'>
           <div className='col-span-3 overflow-hidden flex-col bg-slate-50/20 rounded-lg shadow-lg md:px-6 lg:px-12 py-12 gap-10 hidden md:flex justify-center align-middle'>
               <div className='form-head1'>

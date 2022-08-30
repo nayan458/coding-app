@@ -66,7 +66,8 @@ export default function Registration() {
 
   return (
     <>
-    <div className='relative pt-2 pb-3 top-0 px-16 md:py-2 md:absolute bg-slate-100'>
+    {/* <div className='relative pt-2 pb-3 top-0 px-16 md:py-2 md:absolute bg-slate-100'> */}
+    <div className='top-0 pl-5 pt-2 pr-4 sm:px-10 md:px-[3rem] lg:px-24 left-0 bg-slate-100 md:absolute'>
       <Link to='/'>
         <LogoBlack/>
       </Link>
