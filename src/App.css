@@ -10,7 +10,7 @@
     @apply my-2 ;
   }
   .h1-head{
-    @apply text-[3rem] sm:text-[5rem] md:text-[6rem] ;
+    @apply text-[3rem] sm:text-[4rem] md:text-[5rem] ;
     @apply text-neo-200 lg:text-[5rem] font-Ultra;
   }
   .h2-head{
@@ -37,7 +37,7 @@
     @apply -translate-y-full
   }
   .top-nav{
-    @apply w-full h-auto px-24 py-2 bg-charcol/20 opacity-100 fixed top-0 flex justify-between align-middle items-center z-30 duration-150 backdrop-blur-sm;
+    @apply w-full h-auto px-24 py-2 bg-black/50 opacity-100 fixed top-0 flex justify-between align-middle items-center z-30 duration-150 backdrop-blur-sm;
   }
 
 
@@ -49,7 +49,7 @@
 
   .form-head1{
     @apply text-[2rem] sm:text-[2.5rem] md:text-[2.6rem] ;
-    @apply text-neo-300 lg:text-[3rem] font-SansPro font-bold;
+    @apply text-charcol/90 lg:text-[2.3rem] font-semibold flex;
   }
 
   .form-head2{
